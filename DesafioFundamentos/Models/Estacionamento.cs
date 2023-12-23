@@ -18,7 +18,12 @@ namespace DesafioFundamentos.Models
             Console.WriteLine("Digite a placa do veículo para estacionar:");
             string placa = Console.ReadLine().ToUpper();
 
-            if(veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
+            if(placa.Count() != 7)
+            {
+                Console.WriteLine("Valor invalido. A placa é composto de 7 (sete) caracteres alfanuméricos");
+                return;
+            }
+            else if(veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
             {
                 Console.WriteLine("Veiculo já estacionado.");
             }
@@ -49,7 +54,7 @@ namespace DesafioFundamentos.Models
                 }
                 catch(FormatException ex)
                 {
-                    Console.WriteLine("Valor incorreto. Tente Novamente: " + ex.Message);
+                    Console.WriteLine("Formato incorreto. Tente Novamente: " + ex.Message);
                     return;
                 }
 
