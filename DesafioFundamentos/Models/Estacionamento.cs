@@ -27,7 +27,6 @@ namespace DesafioFundamentos.Models
                 Console.WriteLine("Veículo estacionado com sucesso!");    
                 veiculos.Add(placa);
             }
-
         }
 
         public void RemoverVeiculo()
